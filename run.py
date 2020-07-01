@@ -16,11 +16,6 @@ def create_app(config_filename):
     db.init_app(app)
     return app
 
-@app.route("/home")
-def welcome():
-    print("ASdasdasdas")
-    return "ASdasdasdas"
-
 @app.route('/stopServer', methods=['GET'])
 def stopServer():
     os.kill(os.getpid(), signal.SIGINT)
