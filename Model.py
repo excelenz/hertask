@@ -15,14 +15,16 @@ class Herolo(db.Model):
     message =  db.Column(db.String(300))
     subject =  db.Column(db.String(300))
     date = db.Column(db.DateTime)
+    status = db.Column(db.Integer)
 
-    def __init__(self, message_id, sender_id, reciever_id, message, subject):
+    def __init__(self, message_id, sender_id, reciever_id, message, subject,status=0):
         self.message_id = message_id
         self.sender_id = sender_id
         self.reciever_id = reciever_id
         self.message = message
         self.subject = subject
         self.date = datetime.datetime.now()
+        self.status=status
 
 class Herolousers(db.Model):
     __tablename__ = 'herolo_users'
@@ -41,6 +43,7 @@ class HeroloSchema(ma.Schema):
     message =  fields.String()
     subject = fields.String()
     date = fields.DateTime()
+    status = fields.Integer()
 
 
 class HerolousersSchema(ma.Schema):

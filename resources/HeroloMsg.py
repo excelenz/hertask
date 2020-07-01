@@ -8,10 +8,14 @@ entry_schema = HeroloSchema()
 
 class HeroloResource(Resource):
 
-    def get(self):
-        entries = Herolo.query.all()
-        entries = entries_schema.dump(entries).data
-        return {'status': 'success', 'data': entries}, 200
+    def get(self,id=0):
+        if id ==0:
+            entries = Herolo.query.all()
+            entries = entries_schema.dump(entries).data
+            return {'status': 'success', 'data': entries}, 200
+        else:
+            entry = Herolo.query.filter_by(message_id=data['message_id']).first()
+
 
     def post(self):
         json_data = request.get_json(force=True)
@@ -29,7 +33,8 @@ class HeroloResource(Resource):
             sender_id=json_data['sender_id'],
             reciever_id=json_data['reciever_id'],
             message=json_data['message'],
-            subject=json_data['subject']
+            subject=json_data['subject'],
+            status=0
             )
 
         db.session.add(entry)
