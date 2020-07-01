@@ -14,8 +14,8 @@ class HeroloResource(Resource):
             entries = entries_schema.dump(entries).data
             return {'status': 'success', 'data': entries}, 200
         else:
-            entry = Herolo.query.filter_by(message_id=data['message_id']).first()
-
+            #entry = Herolo.query.filter_by(message_id=data['message_id']).first()
+            pass
 
     def post(self):
         json_data = request.get_json(force=True)
