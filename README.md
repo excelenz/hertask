@@ -27,3 +27,4 @@ http://127.0.0.1:5000/api/admin/
 http://127.0.0.1:5000/api/read/155339/
 
 https://hertask.herokuapp.com/
+https://medium.com/@gitaumoses4/deploying-a-flask-application-on-heroku-e509e5c76524
