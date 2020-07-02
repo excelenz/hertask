@@ -12,6 +12,13 @@ http://hertaskflask-app.herokuapp.com/api/user/234456456/all/
 
 http://hertaskflask-app.herokuapp.com/api/user/234456456/unread/
                     get all unread messages for a specific user
-                    
+
 http://hertaskflask-app.herokuapp.com/api/read/message_id/39/user_id/23245/
                     read one single message and it changing its status to read but only of it's reciever
+
+http://hertaskflask-app.herokuapp.com/api/delete/message_id/39/user_id/23245/
+
+                    delete message
+
+
+In directory Postman there is postman file

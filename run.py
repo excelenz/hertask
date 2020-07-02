@@ -28,8 +28,9 @@ def stopServer():
     return jsonify({ "success": True, "message": "Server is shutting down..." })
 
 
-app = create_app("config")
-CORS(app)
 
 if __name__ == "__main__":
+    app = create_app("config")
+    CORS(app)
+
     app.run(debug=True)

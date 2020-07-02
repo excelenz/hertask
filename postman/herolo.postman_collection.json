@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "5eb58975-c696-4f94-98a9-55fae4d25e06",
+		"name": "herolo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "prod",
+			"item": [
+				{
+					"name": "http://hertaskflask-app.herokuapp.com/api/admin/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"message_id\": \"3\",\"sender_id\":\"1\",\"reciever_id\":\"2\",\"message\":\"message2\",\"subject\":\"subject\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://hertaskflask-app.herokuapp.com/api/admin/",
+							"protocol": "http",
+							"host": [
+								"hertaskflask-app",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"admin",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://hertaskflask-app.herokuapp.com/api/admin/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"message_id\": \"5\",\"sender_id\":\"2\",\"reciever_id\":\"2\",\"message\":\"message2\",\"subject\":\"subject\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://hertaskflask-app.herokuapp.com/api/admin/",
+							"protocol": "http",
+							"host": [
+								"hertaskflask-app",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"admin",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://hertaskflask-app.herokuapp.com/api/admin/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"message_id\": \"6\",\"sender_id\":\"3\",\"reciever_id\":\"4\",\"message\":\"message2\",\"subject\":\"subject\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://hertaskflask-app.herokuapp.com/api/admin/",
+							"protocol": "http",
+							"host": [
+								"hertaskflask-app",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"admin",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://hertaskflask-app.herokuapp.com/api/admin/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"message_id\": \"6\",\"sender_id\":\"3\",\"reciever_id\":\"4\",\"message\":\"message2\",\"subject\":\"subject\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://hertaskflask-app.herokuapp.com/api/admin/",
+							"protocol": "http",
+							"host": [
+								"hertaskflask-app",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"admin",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://hertaskflask-app.herokuapp.com/api/admin/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"message_id\": \"3\",\"sender_id\":\"1\",\"reciever_id\":\"2\",\"message\":\"message2\",\"subject\":\"subject\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://hertaskflask-app.herokuapp.com/api/admin/",
+							"protocol": "http",
+							"host": [
+								"hertaskflask-app",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"admin",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://hertaskflask-app.herokuapp.com/api/delete/message_id/12822333439/user_id/23245/",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"message_id\": \"39\",\"sender_id\":\"23245\",\"reciever_id\":\"234456456\",\"message\":\"message\",\"subject\":\"subject\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://hertaskflask-app.herokuapp.com/api/delete/message_id/12822333439/user_id/23245/",
+							"protocol": "http",
+							"host": [
+								"hertaskflask-app",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"delete",
+								"message_id",
+								"12822333439",
+								"user_id",
+								"23245",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
