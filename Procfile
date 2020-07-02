@@ -1,1 +1,1 @@
-web: gunicorn hertaskflask-app.wsgi --log-file -
+web: gunicorn hertaskflask-app.app
