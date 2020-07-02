@@ -5,6 +5,8 @@
 ps aux
 kill -9 pid
 
+sudo lsof -i :8000
+
 
 python migrate.py db stamp head
 python migrate.py db migrate
