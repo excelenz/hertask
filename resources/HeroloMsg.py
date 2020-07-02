@@ -6,15 +6,35 @@ import datetime
 entries_schema = HeroloSchema(many=True)
 entry_schema = HeroloSchema()
 
+class HeroloSingle(Resource):
+
+    def get(self,message_id):
+        entry = Herolo.query.filter_by(message_id=data['message_id']).first()
+        entries = entries_schema.dump(entries).data
+        return {'status': 'success', 'data': 'READ'}, 200
+        pass
+
+    def delete(self, message_id):
+        entries=Herolo.query.filter_by(reciever_id = user_id,status=status_list[status]).all()
+        entries = entries_schema.dump(entries).data
+        return {'status': 'success', 'data': 'DELETE'}, 200
+        pass
+
 class HeroloResource(Resource):
 
-    def get(self,id=0):
-        if id ==0:
+    def get(self,user_id=0,status='all'):
+        if user_id ==0:
             entries = Herolo.query.all()
             entries = entries_schema.dump(entries).data
             return {'status': 'success', 'data': entries}, 200
         else:
-            #entry = Herolo.query.filter_by(message_id=data['message_id']).first()
+            status_list={'all':3,'unread':0,'read':1}
+            if status=='all':
+                entries=Herolo.query.filter_by(reciever_id = user_id).all()
+            elif status in status_list:
+                entries=Herolo.query.filter_by(reciever_id = user_id,status=status_list[status]).all()
+            entries = entries_schema.dump(entries).data
+            return {'status': 'success', 'data': entries}, 200
             pass
 
     def post(self):
@@ -43,28 +63,3 @@ class HeroloResource(Resource):
         result = entry_schema.dump(entry).data
 
         return { "status": 'success', 'data': result }, 201
-
-    def put(self):
-        json_data = request.get_json(force=True)
-        if not json_data:
-               return {'message': 'No input data provided'}, 400
-        data, errors = entry_schema.load(json_data)
-        if errors:
-            return errors, 422
-        entry = Herolo.query.filter_by(id=data['id']).first()
-        if not entry:
-            return {'message': 'Entry does not exist'}, 400
-        entry.message_id = data['message_id']
-        entry.chat_id = data['chat_id']
-        entry.chat_title = data['chat_title']
-        entry.user_id = data['user_id']
-        entry.first_name = data['first_name']
-        entry.username = data['username']
-        entry.date = data['date']
-        entry.text = data['text']
-
-        db.session.commit()
-
-        result = entry_schema.dump(entry).data
-
-        return { "status": 'success', 'data': result }, 204

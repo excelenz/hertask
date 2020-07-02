@@ -11,8 +11,8 @@ db = SQLAlchemy()
 class Herolo(db.Model):
     __tablename__ = 'herolo_messages'
     message_id = db.Column(db.Integer, primary_key=True)
-    sender_id =  db.Column(db.Integer,db.ForeignKey('herolo_users.id', ondelete='SET NULL'))
-    reciever_id = db.Column(db.Integer, db.ForeignKey('herolo_users.id', ondelete='SET NULL'))
+    sender_id = db.Column(db.Integer)
+    reciever_id = db.Column(db.Integer)
     message =  db.Column(db.String(300))
     subject =  db.Column(db.String(300))
     date = db.Column(db.DateTime)
@@ -28,16 +28,16 @@ class Herolo(db.Model):
         self.date = datetime.datetime.now()
         self.status=status
 
-
 class Herolousers(db.Model):
     __tablename__ = 'herolo_users'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), index=True)
-    herolo_users = db.relationship('Herolousers', foreign_keys='herolo_users.id')
+    privat_key = db.Column(db.Integer)
 
-    def __init__(self, id, name):
+    def __init__(self, id, name,privat_key):
         self.id=id
         self.name=name
+        self.privat_key=privat_key
 
 class HeroloSchema(ma.Schema):
     message_id =  fields.Integer()

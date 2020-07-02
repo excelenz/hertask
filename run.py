@@ -16,6 +16,8 @@ def create_app(config_filename):
     db.init_app(app)
     return app
 
+
+
 @app.route('/stopServer', methods=['GET'])
 def stopServer():
     os.kill(os.getpid(), signal.SIGINT)

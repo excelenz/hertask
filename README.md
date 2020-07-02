@@ -20,3 +20,10 @@ TESTING:
 
 TESTING HEROLO:
 {"message_id": "12822333439","sender_id":"23245","reciever_id":"234456456","message":"message","subject":"subject"}
+
+
+http://127.0.0.1:5000/api/user/234456456/unread/
+http://127.0.0.1:5000/api/admin/
+http://127.0.0.1:5000/api/read/155339/
+
+https://hertask.herokuapp.com/
