@@ -1,1 +1,1 @@
-web: gunicorn run:hertaskflask-app
+web: gunicorn run.py:hertaskflask-app
