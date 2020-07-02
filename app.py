@@ -11,7 +11,7 @@ routes = [
     '/user/<int:user_id>/<status>/'     #show messages for user_id {all,unread}
 ]
 routesSingle=[
-    '/delete/<int:message_id>/<int:user_id>/',
+    '/delete/message_id/<int:message_id>/user_id/<int:user_id>/',
     '/read/message_id/<int:message_id>/user_id/<int:user_id>/'
 ]
 api.add_resource(HeroloResource, *routes)

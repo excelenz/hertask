@@ -6,19 +6,22 @@ import datetime
 entries_schema = HeroloSchema(many=True)
 entry_schema = HeroloSchema()
 
+
 class HeroloSingle(Resource):
 
     def get(self,message_id,user_id,key=0):
-        message = Herolo.query.filter((Herolo.reciever_id==user_id) | (Herolo.sender_id==user_id)).first()
-        print(message)
-        messages = entries_schema.dump(message).data
-        return {'status': 'success', 'data': 'READ'}, 200
+        message = Herolo.query.filter((Herolo.message_id==message_id) & ((Herolo.reciever_id==user_id) | (Herolo.sender_id==user_id))).all()
+        if message:
+            messages = entries_schema.dump(message).data
+            status = Herolo.query.filter_by(message_id=message_id,reciever_id=user_id).update(dict(status=1))
+            db.session.commit()
+            return {'status': 'success', 'data': messages}, 200
         pass
 
-    def delete(self, message_id):
-        entries=Herolo.query.filter_by(reciever_id = user_id,status=status_list[status]).all()
-        entries = entries_schema.dump(entries).data
-        return {'status': 'success', 'data': 'DELETE'}, 200
+    def delete(self, message_id,user_id):
+        message = Herolo.query.filter((Herolo.message_id==message_id) & ((Herolo.reciever_id==user_id) | (Herolo.sender_id==user_id))).delete()
+        db.session.commit()
+        return {'status': 'success', 'result': 'DELETED','message_id':message_id}, 200
         pass
 
 class HeroloResource(Resource):
