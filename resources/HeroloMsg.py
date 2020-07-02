@@ -8,9 +8,10 @@ entry_schema = HeroloSchema()
 
 class HeroloSingle(Resource):
 
-    def get(self,message_id):
-        entry = Herolo.query.filter_by(message_id=data['message_id']).first()
-        entries = entries_schema.dump(entries).data
+    def get(self,message_id,user_id,key=0):
+        message = Herolo.query.filter((Herolo.reciever_id==user_id) | (Herolo.sender_id==user_id)).first()
+        print(message)
+        messages = entries_schema.dump(message).data
         return {'status': 'success', 'data': 'READ'}, 200
         pass
 
