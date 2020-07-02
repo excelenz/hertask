@@ -7,12 +7,13 @@ api = Api(api_bp)
 
 
 routes = [
-    '/admin/',                              #show all messages
+    '/admin/',                          #show all messages
     '/user/<int:user_id>/<status>/'     #show messages for user_id {all,unread}
 ]
 routesSingle=[
     '/delete/message_id/<int:message_id>/user_id/<int:user_id>/',
     '/read/message_id/<int:message_id>/user_id/<int:user_id>/'
 ]
+
 api.add_resource(HeroloResource, *routes)
 api.add_resource(HeroloSingle, *routesSingle)
